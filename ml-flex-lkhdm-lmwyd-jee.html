@@ -1,0 +1,1339 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="مقدمة إلى البرمجة للأجهزة اللوحية التي تعمل بنظام Android باستخدام Android Studio">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/ar-webservice-netbeans-glassfish-fev-2009/ml-flex-lkhdm-lmwyd-jee.html">
+      
+      
+        <link rel="prev" href="ml-net-lkhdm-lmwyd-j2ee.html">
+      
+      
+        <link rel="next" href="lkhl.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>6. عملاء Flex لخدمة المواعيد JEE - إنشاء خدمة ويب Java EE باستخدام بيئة التطوير المتكاملة NetBeans 6.5 وخادم Java EE GlassFish</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "إنشاء خدمة ويب Java EE باستخدام بيئة التطوير المتكاملة NetBeans 6.5 وخادم Java EE GlassFish";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#6-flex-jee" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="إنشاء خدمة ويب Java EE باستخدام بيئة التطوير المتكاملة NetBeans 6.5 وخادم Java EE GlassFish" class="md-header__button md-logo" aria-label="إنشاء خدمة ويب Java EE باستخدام بيئة التطوير المتكاملة NetBeans 6.5 وخادم Java EE GlassFish" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            إنشاء خدمة ويب Java EE باستخدام بيئة التطوير المتكاملة NetBeans 6.5 وخادم Java EE GlassFish
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              6. عملاء Flex لخدمة المواعيد JEE
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="التبديل إلى الوضع الداكن"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="التبديل إلى الوضع الداكن" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="التبديل إلى الوضع الفاتح"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="التبديل إلى الوضع الفاتح" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/ar-webservice-netbeans-glassfish-fev-2009" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="إنشاء خدمة ويب Java EE باستخدام بيئة التطوير المتكاملة NetBeans 6.5 وخادم Java EE GlassFish" class="md-nav__button md-logo" aria-label="إنشاء خدمة ويب Java EE باستخدام بيئة التطوير المتكاملة NetBeans 6.5 وخادم Java EE GlassFish" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    إنشاء خدمة ويب Java EE باستخدام بيئة التطوير المتكاملة NetBeans 6.5 وخادم Java EE GlassFish
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/ar-webservice-netbeans-glassfish-fev-2009" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    مرحبًا بكم
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mqdm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. مقدمة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="by-khdm-lwyb-lty-tm-twyrh.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. طبيعة خدمة الويب التي تم تطويرها
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="kyfy-ml-ltbyq.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. كيفية عمل التطبيق
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="khdm-lwyb-j2ee-ldr-lmwyd.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. خدمة الويب J2EE لإدارة المواعيد
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml-net-lkhdm-lmwyd-j2ee.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. عملاء .NET لخدمة المواعيد J2EE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. عملاء Flex لخدمة المواعيد JEE
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="ml-flex-lkhdm-lmwyd-jee.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. عملاء Flex لخدمة المواعيد JEE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#61-flex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1. أول عميل Flex
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-flex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2. عميل Flex ثانٍ
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lkhl.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. الخلاصة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="6-flex-jee">6. <span style="color: #365f91">عملاء <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> لخدمة المواعيد <bdi dir="ltr" class="odt-ltr-term">JEE</bdi></span></h1>
+<p>نقدم الآن عميلين <strong><bdi dir="ltr" class="odt-ltr-term">Flex</bdi></strong> لخدمة الويب <bdi dir="ltr" class="odt-ltr-term">JEE</bdi> الخاصة بالمواعيد. <bdi dir="ltr" class="odt-ltr-term">IDE</bdi> المستخدم هو <bdi dir="ltr" class="odt-ltr-term">Flex Builder</bdi> 3. يمكن تنزيل نسخة تجريبية من هذا المنتج من الرابط [<bdi dir="ltr" class="odt-ltr-term">https://www.adobe.com/cfusion/tdrc/index.cfm</bdi>?loc=fr_fr&amp;<bdi dir="ltr" class="odt-ltr-term">product</bdi>=<bdi dir="ltr" class="odt-ltr-term">flex</bdi>]. <bdi dir="ltr" class="odt-ltr-term">Flex Builder</bdi> 3 هو بيئة تطوير متكاملة (<bdi dir="ltr" class="odt-ltr-term">IDE</bdi>) من <bdi dir="ltr" class="odt-ltr-term">Eclipse.</bdi> بالإضافة إلى ذلك، لتشغيل عميل <bdi dir="ltr" class="odt-ltr-term">Flex</bdi>، نستخدم خادم ويب <bdi dir="ltr" class="odt-ltr-term">Apache</bdi> من أداة <strong><bdi dir="ltr" class="odt-ltr-term">Wamp</bdi></strong> [<bdi dir="ltr" class="odt-ltr-term">http://www.wampserver.com/</bdi>]. أي خادم <strong><bdi dir="ltr" class="odt-ltr-term">Apache</bdi></strong> سيفي بالغرض. يجب أن يكون متصفح الويب الذي يعرض عميل <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> مزودًا بإصدار <strong><bdi dir="ltr" class="odt-ltr-term">Flash Player</bdi></strong> 9 أو أعلى.</p>
+<p>تتميز تطبيقات <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> بأنها تعمل داخل المكون الإضافي <bdi dir="ltr" class="odt-ltr-term">Flash Player</bdi> للمتصفح. وفي هذا الصدد، فهي تشبه تطبيقات <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi>، التي تدمج نصوص <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> في الصفحات المرسلة إلى المتصفح، والتي يتم تنفيذها بعد ذلك داخل المتصفح. تطبيق <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> ليس تطبيق ويب بالمعنى المعتاد: إنه تطبيق عميل للخدمات التي تقدمها خوادم الويب. في هذا الصدد، فهو مشابه لتطبيق سطح المكتب الذي يعمل كعميل لهذه الخدمات نفسها. ومع ذلك، فإنه يختلف في جانب واحد: يتم تنزيله مبدئيًا من خادم ويب إلى متصفح مزود بمكوّن <bdi dir="ltr" class="odt-ltr-term">Flash Player</bdi> الإضافي القادر على تشغيله. </p>
+<p>مثل تطبيق سطح المكتب، يتكون تطبيق <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> بشكل أساسي من عنصرين:</p>
+<ul>
+  <li>طبقة <b>العرض</b>: العروض المعروضة في المتصفح. توفر هذه العروض نفس الثراء الذي توفره نوافذ تطبيقات سطح المكتب. يتم وصف العرض باستخدام لغة ترميز تسمى <b><bdi dir="ltr" class="odt-ltr-term">MXML</bdi></b>.
+  </li>
+  <li>مكون <b>برمجي </b>يتولى بشكل أساسي معالجة الأحداث التي تطلقها إجراءات المستخدم على العرض. يمكن أيضًا كتابة هذا الكود بلغة <b><bdi dir="ltr" class="odt-ltr-term">MXML</bdi> </b>أو بلغة موجهة للكائنات تسمى <b><bdi dir="ltr" class="odt-ltr-term">ActionScript</bdi></b>. يجب التمييز بين نوعين من الأحداث:
+  </li>
+  <li>الأحداث التي تتطلب الاتصال بخادم الويب: ملء قائمة بالبيانات المقدمة من تطبيق ويب، وإرسال بيانات النموذج إلى الخادم، وما إلى ذلك. يوفر <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> عددًا من الطرق للاتصال بالخادم بطريقة شفافة للمطور. هذه الطرق <b>غير متزامنة </b>بشكل افتراضي: يمكن للمستخدم الاستمرار في التفاعل مع العرض أثناء تنفيذ طلب الخادم.
+  </li>
+  <li>الأحداث التي تعدل العرض المعروض دون تبادل البيانات مع الخادم، مثل سحب عنصر من شجرة وإفلاته في قائمة. يتم التعامل مع هذا النوع من الأحداث محليًا بالكامل داخل المتصفح.
+  </li>
+</ul>
+
+<p>غالبًا ما يتم تنفيذ تطبيق <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> على النحو التالي:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000349000000FDC1BA74C5.png" width="421" height="127" style="display:inline-block; margin:4px;width:11.127cm;height:3.348cm;" class="odt-zoomable" data-zoom-src="images/1000000000000349000000FDC1BA74C5.png" /></td></tr></table>
+
+<ul>
+  <li>في [1]، يتم طلب صفحة <bdi dir="ltr" class="odt-ltr-term">HTML</bdi>
+  </li>
+  <li>في [2]، يتم إرسالها. وهي تتضمن ملفًا ثنائيًا <b><bdi dir="ltr" class="odt-ltr-term">SWF</bdi> </b>(<bdi dir="ltr" class="odt-ltr-term">ShockWave Flash</bdi>) يحتوي على تطبيق <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> بالكامل: جميع طرق العرض ورموز معالجة الأحداث الخاصة بها. سيتم تنفيذ هذا الملف بواسطة المكون الإضافي <bdi dir="ltr" class="odt-ltr-term">Flash Player</bdi> للمتصفح.
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000370000000F2DC4EA6C0.png" width="440" height="121" style="display:inline-block; margin:4px;width:11.642cm;height:3.201cm;" class="odt-zoomable" data-zoom-src="images/1000000000000370000000F2DC4EA6C0.png" /></td></tr></table>
+
+<ul>
+  <li>يعمل عميل <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> محليًا في المتصفح إلا عندما يحتاج إلى بيانات خارجية. في هذه الحالة، يطلبها من الخادم [3]. ويستلمها في [4] بتنسيقات مختلفة: <bdi dir="ltr" class="odt-ltr-term">XML</bdi> أو ثنائية. يمكن كتابة التطبيق المطلوب على خادم الويب بأي لغة. ما يهم هو تنسيق الاستجابة فقط.
+  </li>
+</ul>
+
+<p>لقد وصفنا بنية تنفيذ تطبيق <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> حتى يتمكن القارئ من فهم الفرق بوضوح بينه وبين تطبيق الويب التقليدي، بدون <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi>، مثل تطبيق <bdi dir="ltr" class="odt-ltr-term">Asp.Net</bdi> الموصوف سابقًا. في هذا الأخير، يكون المتصفح سلبيًا: فهو يعرض ببساطة صفحات <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> التي تم إنشاؤها على خادم الويب، والذي يرسلها إلى المتصفح.</p>
+<p>في الأقسام التالية، نقدم مثالين لعملاء <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> لغرض وحيد هو إظهار تنوع العملاء لخدمة الويب. نظرًا لأن المؤلف نفسه مبتدئ في <bdi dir="ltr" class="odt-ltr-term">Flex</bdi>، فقد لا يتم شرح بعض النقاط بالتفصيل الكافي.</p>
+<h2 id="61-flex">6.1. <span style="color: #4f81bd">أول عميل <bdi dir="ltr" class="odt-ltr-term">Flex</bdi></span></h2>
+<p>سنقوم الآن بكتابة أول عميل <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> لعرض قائمة العملاء. وفيما يلي بنية العميل/الخادم التي سنقوم بتنفيذها:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005800000012353A40504.png" width="680" height="141" style="display:inline-block; margin:4px;width:17.997cm;height:3.72cm;" class="odt-zoomable" data-zoom-src="images/10000000000005800000012353A40504.png" /></td></tr></table>
+
+<p>في هذه البنية، يوجد خادمان ويب:</p>
+<ul>
+  <li>خادم <bdi dir="ltr" class="odt-ltr-term">Glassfish</bdi> الذي يشغل خدمة الويب البعيدة
+  </li>
+  <li>خادم <bdi dir="ltr" class="odt-ltr-term">Apache</bdi> الذي يشغل عميل <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> لخدمة الويب البعيدة
+  </li>
+</ul>
+
+<p>نقوم ببناء عميل <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> باستخدام بيئة تطوير التطبيقات المتكاملة (<bdi dir="ltr" class="odt-ltr-term">IDE</bdi>) <bdi dir="ltr" class="odt-ltr-term">Flex Builder</bdi> 3:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004B400000126A37AAFC5.png" width="602" height="147" style="display:inline-block; margin:4px;width:15.928cm;height:3.889cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B400000126A37AAFC5.png" /></td></tr></table>
+
+<ul>
+  <li>في <bdi dir="ltr" class="odt-ltr-term">Flex Builder</bdi> 3، قم بإنشاء مشروع جديد في [1]
+  </li>
+  <li>ونسميه في [2] ونحدد في [3] المجلد الذي سيتم إنشاؤه فيه
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004CF000001232F8635B0.png" width="616" height="146" style="display:inline-block; margin:4px;width:16.286cm;height:3.851cm;" class="odt-zoomable" data-zoom-src="images/10000000000004CF000001232F8635B0.png" /></td></tr></table>
+
+<ul>
+  <li>في [4]، نسمي التطبيق الرئيسي (الذي سيتم تنفيذه)
+  </li>
+  <li>في [5]، يظهر المشروع بمجرد إنشائه
+  </li>
+  <li>في [6]، ملف <bdi dir="ltr" class="odt-ltr-term">MXML</bdi> الرئيسي للتطبيق
+  </li>
+  <li>يحتوي ملف <bdi dir="ltr" class="odt-ltr-term">MXML</bdi> على عرض ورمز معالجة الأحداث لهذا العرض. توفر علامة التبويب [<bdi dir="ltr" class="odt-ltr-term">Source</bdi>] [7] الوصول إلى ملف <bdi dir="ltr" class="odt-ltr-term">MXML.</bdi> ستجد هناك علامات &lt;mx&gt; تصف العرض بالإضافة إلى رمز <bdi dir="ltr" class="odt-ltr-term">ActionScript.</bdi>
+  </li>
+  <li>يمكن إنشاء العرض بيانياً باستخدام علامة التبويب [<bdi dir="ltr" class="odt-ltr-term">Design</bdi>] [8]. ثم يتم إنشاء علامات <bdi dir="ltr" class="odt-ltr-term">MXML</bdi> التي تصف العرض تلقائياً في علامة التبويب [<bdi dir="ltr" class="odt-ltr-term">Source</bdi>]. والعكس صحيح أيضاً: علامات <bdi dir="ltr" class="odt-ltr-term">MXML</bdi> المضافة مباشرةً في علامة التبويب [<bdi dir="ltr" class="odt-ltr-term">Source</bdi>] تنعكس بيانياً في علامة التبويب [<bdi dir="ltr" class="odt-ltr-term">Design</bdi>].
+  </li>
+</ul>
+
+<p>كما حدث مع عملاء <bdi dir="ltr" class="odt-ltr-term">C#</bdi> و <bdi dir="ltr" class="odt-ltr-term">ASP.NET</bdi> السابقين، سنقوم بإنشاء الوكيل <bdi dir="ltr" class="odt-ltr-term">C</bdi> المحلي [<bdi dir="ltr" class="odt-ltr-term">B</bdi>] لخدمة الويب البعيدة <bdi dir="ltr" class="odt-ltr-term">S</bdi> [<bdi dir="ltr" class="odt-ltr-term">A</bdi>]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000056F00000129F3FF2416.png" width="680" height="145" style="display:inline-block; margin:4px;width:17.997cm;height:3.844cm;" class="odt-zoomable" data-zoom-src="images/100000000000056F00000129F3FF2416.png" /></td></tr></table>
+
+<p>لكي يتم إنشاء الوكيل <bdi dir="ltr" class="odt-ltr-term">C</bdi>، يجب أن تكون خدمة الويب <bdi dir="ltr" class="odt-ltr-term">JEE</bdi> نشطة.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003CF000000C221312307.png" width="488" height="97" style="display:inline-block; margin:4px;width:12.899cm;height:2.566cm;" class="odt-zoomable" data-zoom-src="images/10000000000003CF000000C221312307.png" /></td></tr></table>
+
+<ul>
+  <li>في [1]، حدد خيار &quot;<i>البيانات / استيراد خدمة الويب</i>&quot;
+  </li>
+  <li>في [2]، حدد المجلد لإنشاء فئات وواجهات الوكيل <bdi dir="ltr" class="odt-ltr-term">C.</bdi>
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000511000002984672209D.png" width="649" height="332" style="display:inline-block; margin:4px;width:17.159cm;height:8.784cm;" class="odt-zoomable" data-zoom-src="images/1000000000000511000002984672209D.png" /></td></tr></table>
+
+<ul>
+  <li>في [3]، أدخل عنوان <bdi dir="ltr" class="odt-ltr-term">URI</bdi> لملف <bdi dir="ltr" class="odt-ltr-term">WSDL</bdi> الخاص بخدمة الويب البعيدة <bdi dir="ltr" class="odt-ltr-term">S</bdi> (انظر القسم<a href="#uri-service-web"><u><span style="color: #0563c1"> 4.10.2</span></u></a>)، ثم انتقل إلى الخطوة التالية
+  </li>
+  <li>في [4] و[5]، خدمة الويب الموصوفة بملف <bdi dir="ltr" class="odt-ltr-term">WSDL</bdi> المحدد في [3]
+  </li>
+  <li>في [6]: قائمة الطرق التي سيتم إنشاؤها للوكيل <bdi dir="ltr" class="odt-ltr-term">C.</bdi> لاحظ أن هذه ليست الطرق الفعلية للخدمة <bdi dir="ltr" class="odt-ltr-term">S.</bdi> فهي لا تحتوي على التوقيع الصحيح. هنا، تحتوي كل طريقة مدرجة على معلمة واحدة بغض النظر عن عدد المعلمات في طريقة خدمة الويب الفعلية. هذه المعلمة الواحدة هي مثيل فئة يغلف المعلمات المتوقعة من قبل الطريقة البعيدة في حقولها.
+  </li>
+  <li>في [7]: الحزمة التي سيتم فيها إنشاء فئات وواجهات الوكيل <bdi dir="ltr" class="odt-ltr-term">C</bdi>
+  </li>
+  <li>في [8]: اسم الفئة المحلية التي ستعمل كوكيل لخدمة الويب البعيدة
+  </li>
+  <li>في [9]: إنهاء المعالج.
+  </li>
+  <li>في [10]: قائمة الفئات والواجهات للوكيل <bdi dir="ltr" class="odt-ltr-term">C</bdi> الذي تم إنشاؤه.
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001B000000081A015FB8E.png" width="216" height="65" style="display:inline-block; margin:4px;width:5.715cm;height:1.707cm;" class="odt-zoomable" data-zoom-src="images/10000000000001B000000081A015FB8E.png" /></td></tr></table>
+
+<ul>
+  <li>في [11]: الفئة [<bdi dir="ltr" class="odt-ltr-term">WsDaoJpaService</bdi>] التي تنفذ أساليب الوكيل <bdi dir="ltr" class="odt-ltr-term">C.</bdi>
+  </li>
+</ul>
+
+<p>تنفذ فئة [<bdi dir="ltr" class="odt-ltr-term">WsDaoJpaService</bdi>] التي تم إنشاؤها واجهة [<bdi dir="ltr" class="odt-ltr-term">IWsDaoJpaService</bdi>] التالية:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content">/**</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> * Service.as</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> * This file was auto-generated from WSDL by the Apache Axis2 generator modified by Adobe</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> * Any change made to this file will be overwritten when the code is re-generated.</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> */</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#9900cc">package</span><span style="color:#000000"> generated.webservices{</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.rpc.AsyncToken;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> flash.utils.ByteArray;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.rpc.soap.types.*;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#0033ff">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#9900cc">interface</span><span style="color:#000000"> IWsDaoJpaService</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">//Stub functions for the getAllClients operation</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#3f5fbf">/**</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">         * Call the operation on the server passing in the arguments defined in the WSDL file</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">         * @param getAllClients</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">         * @return An AsyncToken</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">         */</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> getAllClients(getAllClients:GetAllClients):AsyncToken;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">....</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> getAllClients_send():AsyncToken;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#0033ff">get</span><span style="color:#000000"> getAllClients_lastResult():GetAllClientsResponse;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#0033ff">set</span><span style="color:#000000"> getAllClients_lastResult(lastResult:GetAllClientsResponse):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">       </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> addgetAllClientsEventListener(listener:Function):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#0033ff">get</span><span style="color:#000000"> getAllClients_request_var():GetAllClients_request;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#0033ff">set</span><span style="color:#000000"> getAllClients_request_var(request:GetAllClients_request):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li><span style="color: #000000">السطر 11: واجهة [<bdi dir="ltr" class="odt-ltr-term">IWsDaoJpaService</bdi>] التي تنفذها فئة [<bdi dir="ltr" class="odt-ltr-term">WsDaoJpaService</bdi>]</span>
+  </li>
+  <li><span style="color: #000000">الأسطر 19–31: الطرق المختلفة التي تم إنشاؤها لطريقة </span><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">getAllClients</bdi></span></b><span style="color: #000000">() الخاصة بخدمة الويب البعيدة. الطريقة الوحيدة التي تتطابق بشكل وثيق مع تلك التي تعرضها خدمة الويب فعليًا هي تلك الموجودة في السطر 19. لها الاسم الصحيح ولكن ليس التوقيع الصحيح: طريقة </span><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">getAllClients</bdi></span></b><span style="color: #000000">() الخاصة بخدمة الويب البعيدة لا تحتوي على معلمات.</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">المعلمة الوحيدة لطريقة </span><strong><bdi dir="ltr" class="odt-ltr-term">getAllClients</bdi></strong><span style="color: #000000"> في الوكيل <bdi dir="ltr" class="odt-ltr-term">C</bdi> الذي تم إنشاؤه هي من النوع </span><strong><bdi dir="ltr" class="odt-ltr-term">GetAllClients</bdi></strong><span style="color: #000000"> التالي:</span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content">/**</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> * GetAllClients.as</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> * This file was auto-generated from WSDL by the Apache Axis2 generator modified by Adobe</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> * Any change made to this file will be overwritten when the code is re-generated.</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> */</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#9900cc">package</span><span style="color:#000000"> generated.webservices</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.utils.ObjectProxy;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> flash.utils.ByteArray;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.rpc.soap.types.*;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#3f5fbf">/**</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">     * Wrapper class for a operation required type</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">     */</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#0033ff">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#9900cc">class</span><span style="color:#000000"> GetAllClients</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#3f5fbf">/**</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">         * Constructor, initializes the type class</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">         */</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> GetAllClients() {}</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p><span style="color: #000000">هذه فئة فارغة. وقد يرجع ذلك إلى أن الطريقة المستهدفة </span><em><bdi dir="ltr" class="odt-ltr-term">getAllClients</bdi></em> <span style="color: #000000">لا تقبل أي معلمات.</span></p>
+<p><span style="color: #000000">الآن دعونا نفحص الفئات التي تم إنشاؤها لكيانات </span><em><bdi dir="ltr" class="odt-ltr-term">Doctor</bdi></em> <span style="color: #000000">و </span><em><bdi dir="ltr" class="odt-ltr-term">Client</bdi></em> <span style="color: #000000">و </span><em><bdi dir="ltr" class="odt-ltr-term">Appointment</bdi></em> <span style="color: #000000">و </span><em><bdi dir="ltr" class="odt-ltr-term">Time Slot</bdi></em><span style="color: #000000">. لنلقِ نظرة، على سبيل المثال، على فئة </span><em><bdi dir="ltr" class="odt-ltr-term">Client</bdi></em><span style="color: #000000">:</span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#9900cc">package</span><span style="color:#000000"> generated.webservices</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.utils.ObjectProxy;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> flash.utils.ByteArray;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.rpc.soap.types.*;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#0033ff">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#9900cc">class</span><span style="color:#000000"> Client </span><span style="font-weight:bold;color:#0033ff">extends</span><span style="color:#000000"> generated.webservices.Personne</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> Client() {}</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p><span style="color: #000000">فئة </span><em><bdi dir="ltr" class="odt-ltr-term">Client</bdi></em> <span style="color: #000000">فارغة أيضًا. وهي مشتقة (السطر 7) من فئة </span><em><bdi dir="ltr" class="odt-ltr-term">Person</bdi></em><span style="color: #000000"> التالية:</span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#9900cc">package</span><span style="color:#000000"> generated.webservices</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.utils.ObjectProxy;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> flash.utils.ByteArray;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.rpc.soap.types.*;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#0033ff">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#9900cc">class</span><span style="color:#000000"> Personne</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> Personne() {}</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> id:Number;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> nom:String;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> prenom:String;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> titre:String;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> version:Number;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li><span style="color: #000000">الأسطر 11–15: هذه هي سمات فئة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">Person</bdi> </span></i><span style="color: #000000">المُعرَّفة داخل خدمة الويب <bdi dir="ltr" class="odt-ltr-term">JEE.</bdi></span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">لدينا الآن العناصر الرئيسية للوكيل <bdi dir="ltr" class="odt-ltr-term">C.</bdi> يمكننا الآن استخدامه.</span></p>
+<p><span style="color: #000000">الملف الرئيسي للعميل [<bdi dir="ltr" class="odt-ltr-term">rdvmedecins01.xml</bdi>] هو كما يلي:</span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;mx:Application</span><span style="color:#000000"> xmlns:mx=&quot;</span><span style="color:#990000">http://www.adobe.com/2006/mxml</span><span style="color:#000000">&quot; layout=&quot;</span><span style="color:#990000">vertical</span><span style="color:#000000">&quot; creationComplete=&quot;init();&quot;</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#006633">&lt;mx:Script&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        &lt;![CDATA[</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> generated.webservices.Client;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// données</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> ws:WsDaoJpaService;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            [</span><span style="font-weight:bold;color:#0033ff">Bindable</span><span style="color:#000000">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> clients:ArrayCollection;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> init():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> loadClients():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">...</span>            </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> displayClient(client:Client):String{</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            } </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        ]]&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#006633">&lt;/mx:Script&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;mx:Label</span><span style="color:#000000"> text=&quot;</span><span style="color:#990000">Liste des clients</span><span style="color:#000000">&quot; fontSize=&quot;</span><span style="color:#990000">14</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;mx:List</span><span style="color:#000000"> dataProvider=&quot;</span><span style="color:#990000">{</span><span style="color:#000000">clients</span><span style="color:#990000">}</span><span style="color:#000000">&quot; labelFunction=&quot;</span><span style="color:#990000">displayClient</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;&lt;/mx:List&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;mx:Button</span><span style="color:#000000"> label=&quot;</span><span style="color:#990000">Afficher les clients</span><span style="color:#000000">&quot; click=&quot;loadClients()&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;mx:Text</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">txtMsgErreur</span><span style="color:#000000">&quot; width=&quot;</span><span style="color:#990000">454</span><span style="color:#000000">&quot; height=&quot;</span><span style="color:#990000">75</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;/mx:Application&gt;</span></span>
+</code></pre></div>
+
+<p><span style="color: #000000">في هذا الكود، يجب التمييز بين عدة عناصر:</span></p>
+<ul>
+  <li><span style="color: #000000">تعريف التطبيق (السطر 2)</span>
+  </li>
+  <li><span style="color: #000000">وصف طريقة العرض الخاصة به (الأسطر 27–30)</span>
+  </li>
+  <li><span style="color: #000000">معالجات أحداث <bdi dir="ltr" class="odt-ltr-term">ActionScript</bdi> داخل العلامة &lt;<bdi dir="ltr" class="odt-ltr-term">mx:Script</bdi>&gt; (الأسطر 3-26).</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">لنبدأ بمناقشة تعريف التطبيق نفسه ووصف واجهته:</span></p>
+<ul>
+  <li><span style="color: #000000">السطر 2: يحدد </span>
+    <ul>
+      <li><span style="color: #000000">تخطيط المكونات داخل حاوية العرض. تشير السمة</span><i><span style="color: #000000"> <bdi dir="ltr" class="odt-ltr-term">layout</bdi>=&quot;<bdi dir="ltr" class="odt-ltr-term">vertical</bdi>&quot; </span></i><span style="color: #000000">إلى أن المكونات سيتم ترتيبها واحدة أسفل الأخرى.</span>
+      </li>
+      <li><span style="color: #000000">الطريقة التي سيتم تنفيذها عند إنشاء مثيل للواجهة، أي عند إنشاء مثيل لجميع مكوناتها. تشير السمة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">creationComplete</bdi>=&quot;<bdi dir="ltr" class="odt-ltr-term">init</bdi>();&quot; </span></i><span style="color: #000000">إلى أنه يجب تنفيذ الطريقة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">init</bdi> </span></i><span style="color: #000000">الموجودة في السطر 13. </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">creationComplete</bdi> </span></i><span style="color: #000000">هي أحد الأحداث التي يمكن لفئة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">Application</bdi> </span></i><span style="color: #000000">إصدارها.</span>
+      </li>
+    </ul>
+  </li>
+  <li><span style="color: #000000">تحدد الأسطر 27-30 مكونات العرض</span>
+  </li>
+  <li><span style="color: #000000">السطر 27: يحدد نصًا</span>
+  </li>
+  <li><span style="color: #000000">السطر 28: قائمة ستحتوي على قائمة العملاء. تحدد العلامة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">dataProvider</bdi>=&quot;</span></i><i><span style="color: #990000">{</span></i><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">clients</bdi></span></i><i><span style="color: #990000">}</span></i><i><span style="color: #000000">&quot; </span></i><span style="color: #000000">مصدر البيانات الذي سيملأ القائمة. هنا، سيتم ملء القائمة بكائن </span><i><span style="color: #000000">العملاء </span></i><span style="color: #000000">المحدد في السطر 11. لكي تتمكن من كتابة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">dataProvider</bdi>=&quot;</span></i><i><span style="color: #990000">{</span></i><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">clients</bdi></span></i><i><span style="color: #990000">}</span></i><i><span style="color: #000000">&quot;، </span></i><span style="color: #000000">يجب أن يحتوي حقل </span><i><span style="color: #000000">العملاء</span></i><span style="color: #000000"> على السمة [<bdi dir="ltr" class="odt-ltr-term">Bindable</bdi>] (السطر 10). تسمح هذه السمة بالإشارة إلى متغير <bdi dir="ltr" class="odt-ltr-term">ActionScript</bdi> خارج علامة &lt;<bdi dir="ltr" class="odt-ltr-term">mx:Script</bdi>&gt;. حقل </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">clients</bdi> </span></i><span style="color: #000000">هو من نوع </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ArrayCollection</bdi></span></i><span style="color: #000000">، وهو نوع <bdi dir="ltr" class="odt-ltr-term">ActionScript</bdi> يسمح لك بتخزين قوائم الكائنات—في هذه الحالة، قائمة كائنات من نوع </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">Client</bdi></span></i><span style="color: #000000">.</span>
+  </li>
+  <li><span style="color: #000000">السطر 29: زر. يتم التعامل مع حدث </span><i><span style="color: #000000">النقر</span></i><span style="color: #000000"> عليه. تشير السمة</span><i><span style="color: #000000"> <bdi dir="ltr" class="odt-ltr-term">click</bdi>=&quot;<bdi dir="ltr" class="odt-ltr-term">loadClients</bdi>()&quot; </span></i><span style="color: #000000">إلى أنه يجب تنفيذ الأسلوب </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">loadClients</bdi> </span></i><span style="color: #000000">الموجود في السطر 17 عند النقر على الزر. سيؤدي هذا الزر إلى تشغيل الطلب الموجه إلى خدمة الويب للحصول على قائمة العملاء.</span>
+  </li>
+  <li><span style="color: #000000">السطر 30: مربع نص مخصص لعرض أي رسالة خطأ قد يرد بها الخادم استجابةً للطلب السابق.</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">تُنشئ الأسطر 27-30 العرض التالي في علامة التبويب [التصميم]:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000048B0000021365DDCBB0.png" width="582" height="266" style="display:inline-block; margin:4px;width:15.386cm;height:7.026cm;" class="odt-zoomable" data-zoom-src="images/100000000000048B0000021365DDCBB0.png" /></td></tr></table>
+
+<ul>
+  <li><span style="color: #000000">[1]: تم إنشاؤه بواسطة مكون </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">Label</bdi> </span></i><span style="color: #000000">في السطر 27</span>
+  </li>
+  <li><span style="color: #000000">[2]: تم إنشاؤه بواسطة مكون </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">List</bdi> </span></i><span style="color: #000000">في السطر 28</span>
+  </li>
+  <li><span style="color: #000000">[3]: تم إنشاؤه بواسطة مكون </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">Button</bdi> </span></i><span style="color: #000000">في السطر 29</span>
+  </li>
+  <li><span style="color: #000000">[4]: تم إنشاؤه بواسطة مكون </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">Text</bdi> </span></i><span style="color: #000000">في السطر 30</span>
+  </li>
+  <li><span style="color: #000000">[5]: مثال على التنفيذ</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">دعونا الآن نفحص كود <bdi dir="ltr" class="odt-ltr-term">ActionScript</bdi> الخاص بالصفحة. يتولى هذا الكود معالجة أحداث العرض.</span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;mx:Application</span> xmlns:mx=&quot;<span style="color:#990000">http://www.adobe.com/2006/mxml</span>&quot; layout=&quot;<span style="color:#990000">vertical</span>&quot; creationComplete=&quot;init();&quot;<span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#006633">&lt;mx:Script&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        &lt;![CDATA[</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> generated.webservices.Client;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// données</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> ws:WsDaoJpaService;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            [</span><span style="font-weight:bold;color:#0033ff">Bindable</span><span style="color:#000000">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> clients:ArrayCollection;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> init():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// on instancie le proxy du service web</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                ws=</span><span style="font-weight:bold;color:#0033ff">new</span><span style="color:#000000"> WsDaoJpaService();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// on configure les gestionnaires d&#x27;évts</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                ws.addgetAllClientsEventListener(loadClientsCompleted);</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                ws.addEventListener(FaultEvent.FAULT,loadClientsFault);</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> loadClients():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// on demande la liste des clients</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                ws.getAllClients(</span><span style="font-weight:bold;color:#0033ff">new</span><span style="color:#000000"> GetAllClients());</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> loadClientsCompleted(event:GetAllClientsResultEvent):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// on récupère les clients dans le résultat envoyé</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                clients=event.result </span><span style="font-weight:bold;color:#0033ff">as</span><span style="color:#000000"> ArrayCollection;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> loadClientsFault(event:FaultEvent):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// on affiche le msg d&#x27;erreur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                txtMsgErreur.text=event.fault.message;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> displayClient(client:Client):String{</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// on affiche un client</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="font-weight:bold;color:#0033ff">return</span><span style="color:#000000"> client.nom + </span><span style="font-weight:bold;color:#990000">&quot; &quot;</span><span style="color:#000000"> + client.prenom;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            } </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        ]]&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#006633">&lt;/mx:Script&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;mx:Label</span><span style="color:#000000"> text=&quot;</span><span style="color:#990000">Liste des clients</span><span style="color:#000000">&quot; fontSize=&quot;</span><span style="color:#990000">14</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;mx:List</span><span style="color:#000000"> dataProvider=&quot;</span><span style="color:#990000">{</span><span style="color:#000000">clients</span><span style="color:#990000">}</span><span style="color:#000000">&quot; labelFunction=&quot;</span><span style="color:#990000">displayClient</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;&lt;/mx:List&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;mx:Button</span><span style="color:#000000"> label=&quot;</span><span style="color:#990000">Afficher les clients</span><span style="color:#000000">&quot; click=&quot;loadClients()&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;mx:Text</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">txtMsgErreur</span><span style="color:#000000">&quot; width=&quot;</span><span style="color:#990000">454</span><span style="color:#000000">&quot; height=&quot;</span><span style="color:#990000">75</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+</code></pre></div>
+
+<ul>
+  <li><span style="color: #000000">السطر 9: يشير</span><i><span style="color: #000000"> ws </span></i><span style="color: #000000">إلى الوكيل <bdi dir="ltr" class="odt-ltr-term">C</bdi> من النوع <bdi dir="ltr" class="odt-ltr-term">WsDaoJpaService</bdi>، وهو الفئة التي تم إنشاؤها مسبقًا والتي تنفذ الطرق للوصول إلى خدمة الويب البعيدة.</span>
+  </li>
+  <li><span style="color: #000000">السطر 13: يتم تنفيذ طريقة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">init</bdi> </span></i><span style="color: #000000">عند إنشاء مثيل العرض (السطر 1)</span>
+  </li>
+  <li><span style="color: #000000">السطر 15: يتم إنشاء مثيل للوكيل <bdi dir="ltr" class="odt-ltr-term">C</bdi></span>
+  </li>
+  <li><span style="color: #000000">السطر 17: يتم ربط معالج الأحداث بالحدث &quot;اكتملت الطريقة غير المتزامنة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">GetAllClients</bdi> </span></i><span style="color: #000000">بنجاح&quot;. بالنسبة لأي طريقة </span><i><span style="color: #000000">m </span></i><span style="color: #000000">في خدمة الويب البعيدة، يقوم الوكيل <bdi dir="ltr" class="odt-ltr-term">C</bdi> بتنفيذ طريقة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">addmEventListener</bdi> </span></i><span style="color: #000000">التي تسمح بربط معالج الأحداث بالحدث &quot;اكتملت الطريقة غير </span><span style="color: #000000">المتزامنة </span><i><span style="color: #000000">m </span></i><span style="color: #000000">بنجاح&quot;. هنا، يشير السطر 17 إلى أنه يجب تنفيذ الطريقة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">loadClientsCompleted</bdi> </span></i><span style="color: #000000">في السطر 26 عندما يتلقى عميل <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> قائمة العملاء.</span>
+  </li>
+  <li><span style="color: #000000">السطر 18: معالج الأحداث مرتبط بالحدث &quot;اكتملت طريقة غير متزامنة للوكيل <bdi dir="ltr" class="odt-ltr-term">C</bdi> بفشل&quot;. هنا، يشير السطر 18 إلى أنه يجب تنفيذ طريقة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">loadClientsFault</bdi> </span></i><span style="color: #000000">في السطر 31 كلما فشل طلب غير متزامن من الوكيل <bdi dir="ltr" class="odt-ltr-term">C</bdi> إلى خدمة الويب <bdi dir="ltr" class="odt-ltr-term">S.</bdi> هنا، الطلب الوحيد الذي سيتم إجراؤه هو الطلب الذي يطلب قائمة العملاء.</span>
+  </li>
+  <li><span style="color: #000000">في النهاية، قامت طريقة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">init</bdi> </span></i><span style="color: #000000">في السطر 13 بإنشاء مثيل للوكيل <bdi dir="ltr" class="odt-ltr-term">C</bdi> وتحديد معالجات الأحداث للطلب غير المتزامن الذي سيتم إجراؤه لاحقًا.</span>
+  </li>
+  <li><span style="color: #000000">السطر 21: الطريقة التي يتم تنفيذها عند النقر فوق الزر [<bdi dir="ltr" class="odt-ltr-term">Display Clients</bdi>] (السطر 44)</span>
+  </li>
+  <li><span style="color: #000000">السطر 23: يتم تنفيذ طريقة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">getAllClients</bdi></span></i><span style="color: #000000"> غير المتزامنة للوكيل <bdi dir="ltr" class="odt-ltr-term">C.</bdi> يتم تمرير مثيل </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">GetAllClients</bdi> </span></i><span style="color: #000000">المسؤول عن تغليف معلمات الطريقة البعيدة التي تم استدعاؤها. هنا، لا توجد معلمات. يتم إنشاء مثيل فارغ. طريقة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">getAllClients</bdi> </span></i><span style="color: #000000">غير متزامنة. يستمر التنفيذ دون انتظار البيانات التي يعيدها الخادم. على وجه الخصوص، يمكن للمستخدم الاستمرار في التفاعل مع العرض. سيستمر التعامل مع الأحداث التي يطلقها المستخدم. بفضل طريقة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">init</bdi></span></i><span style="color: #000000">، نعلم أن:</span>
+    <ul>
+      <li><span style="color: #000000">سيتم تنفيذ طريقة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">loadClientsCompleted</bdi> </span></i><span style="color: #000000">(السطر 26) عندما يتلقى عميل <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> قائمة العملاء</span>
+      </li>
+      <li><span style="color: #000000">سيتم تنفيذ طريقة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">loadClientsFault</bdi> </span></i><span style="color: #000000">(السطر 31) إذا انتهى الطلب بخطأ. </span>
+      </li>
+    </ul>
+  </li>
+  <li><span style="color: #000000">السطر 28: يتم استرداد قائمة العملاء من الحدث. نعلم أن طريقة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">getAllClients</bdi> </span></i><span style="color: #000000">الخاصة بخدمة الويب البعيدة تُرجع قائمة. نضع هذه القائمة في حقل </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">clients</bdi> </span></i><span style="color: #000000">في السطر 11. يلزم إجراء تحويل نوع. نظرًا لأن القائمة في السطر 43 مرتبطة بحقل <bdi dir="ltr" class="odt-ltr-term">clients</bdi>، يتم إخطارها بأن بياناتها قد تغيرت. ثم تعرض قائمة العملاء. ستعرض كل عنصر في قائمة </span><i><span style="color: #000000">العملاء </span></i><span style="color: #000000">باستخدام طريقة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">displayClient</bdi> </span></i><span style="color: #000000">(السطر 43).</span>
+  </li>
+  <li><span style="color: #000000">السطر 36: تأخذ طريقة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">displayClient</bdi> </span></i><span style="color: #000000">نوع </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">Client</bdi></span></i><span style="color: #000000">. يجب أن تُرجع السلسلة التي يجب أن تعرضها القائمة لهذا العميل. هنا، الاسم الأول واسم العائلة (السطر 38).</span>
+  </li>
+  <li><span style="color: #000000">السطر 31: الطريقة التي يتم تنفيذها عند فشل طلب إلى خدمة الويب. تتلقى معلمة من نوع </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">FaultEvent</bdi></span></i><span style="color: #000000">. تحتوي هذه الفئة على حقل</span><i><span style="color: #000000"> `<bdi dir="ltr" class="odt-ltr-term">fault</bdi>` </span></i><span style="color: #000000">الذي يغلف الخطأ الذي أعاده الخادم. `</span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">fault.message</bdi>` </span></i><span style="color: #000000">هي الرسالة المصاحبة للخطأ.</span>
+  </li>
+  <li><span style="color: #000000">السطر 33: يتم عرض رسالة الخطأ في مربع النص المخصص لهذا الغرض.</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">بمجرد إنشاء التطبيق، يوجد الكود القابل للتنفيذ في مجلد [<bdi dir="ltr" class="odt-ltr-term">bin-debug</bdi>] الخاص بمشروع <bdi dir="ltr" class="odt-ltr-term">Flex:</bdi></span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000166000001610C9B8123.png" width="179" height="177" style="display:inline-block; margin:4px;width:4.736cm;height:4.671cm;" class="odt-zoomable" data-zoom-src="images/1000000000000166000001610C9B8123.png" /></td></tr></table>
+
+<p><span style="color: #000000">أعلاه،</span></p>
+<ul>
+  <li><span style="color: #000000">يمثل الملف [<bdi dir="ltr" class="odt-ltr-term">rdvmedecins01.html</bdi>] ملف <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> الذي سيطلبه المتصفح من خادم الويب للحصول على عميل <bdi dir="ltr" class="odt-ltr-term">Flex</bdi></span>
+  </li>
+  <li><span style="color: #000000">الملف [<bdi dir="ltr" class="odt-ltr-term">rdvmedecins01.swf</bdi>] هو الملف الثنائي لعميل <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> الذي سيتم تضمينه في صفحة <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> المرسلة إلى المتصفح ثم تنفيذه بواسطة مكون <bdi dir="ltr" class="odt-ltr-term">Flash Player</bdi> الإضافي للمتصفح.</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">نحن جاهزون لتشغيل عميل <bdi dir="ltr" class="odt-ltr-term">Flex.</bdi> أولاً، نحتاج إلى إعداد بيئة التشغيل المطلوبة له. لنعد إلى بنية العميل/الخادم التي اختبرناها:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000056A0000011C27005F16.png" width="680" height="139" style="display:inline-block; margin:4px;width:17.997cm;height:3.688cm;" class="odt-zoomable" data-zoom-src="images/100000000000056A0000011C27005F16.png" /></td></tr></table>
+
+<p><strong>جانب الخادم</strong><span style="color: #000000">:</span></p>
+<ul>
+  <li><span style="color: #000000">بدء تشغيل نظام إدارة قواعد البيانات <bdi dir="ltr" class="odt-ltr-term">MySQL</bdi></span>
+  </li>
+  <li><span style="color: #000000">قم بتشغيل خادم <bdi dir="ltr" class="odt-ltr-term">GlassFish</bdi></span>
+  </li>
+  <li><span style="color: #000000">نشر خدمة الويب <bdi dir="ltr" class="odt-ltr-term">JEE</bdi> الخاصة بالمواعيد إذا لم تكن قد نُشرت بالفعل</span>
+  </li>
+  <li><span style="color: #000000">اختياريًا، اختبر أحد العملاء السابقين للتحقق من أن كل شيء في مكانه على جانب الخادم.</span>
+  </li>
+</ul>
+
+<p><strong>جانب العميل</strong><span style="color: #000000">:</span></p>
+<p><span style="color: #000000">ابدأ تشغيل خادم <bdi dir="ltr" class="odt-ltr-term">Apache</bdi> الذي سيستضيف تطبيق <bdi dir="ltr" class="odt-ltr-term">Flex.</bdi> نستخدم هنا أداة </span><em><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">Wamp</bdi></span></em><span style="color: #000000">. باستخدام هذه الأداة، يمكننا تعيين اسم مستعار لمجلد [<bdi dir="ltr" class="odt-ltr-term">bin-debug</bdi>] الخاص بمشروع <bdi dir="ltr" class="odt-ltr-term">Flex.</bdi></span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000515000001546290F22B.png" width="651" height="170" style="display:inline-block; margin:4px;width:17.212cm;height:4.498cm;" class="odt-zoomable" data-zoom-src="images/1000000000000515000001546290F22B.png" /></td></tr></table>
+
+<ul>
+  <li><span style="color: #000000">يوجد رمز <bdi dir="ltr" class="odt-ltr-term">Wamp</bdi> في أسفل الشاشة [1]</span>
+  </li>
+  <li><span style="color: #000000">انقر بزر الفأرة الأيسر على أيقونة </span><i><bdi dir="ltr" class="odt-ltr-term">Wamp</bdi></i><span style="color: #000000">، واختر خيار </span><i><bdi dir="ltr" class="odt-ltr-term">Apache</bdi> </i><span style="color: #000000">[2] / </span><i><bdi dir="ltr" class="odt-ltr-term">Alias Directories</bdi> </i><span style="color: #000000">[3, 4]</span>
+  </li>
+  <li><span style="color: #000000">اختر الخيار [5]: </span><i><bdi dir="ltr" class="odt-ltr-term">Add an alias</bdi></i>
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004A5000000E45E640BC3.png" width="595" height="114" style="display:inline-block; margin:4px;width:15.73cm;height:3.016cm;" class="odt-zoomable" data-zoom-src="images/10000000000004A5000000E45E640BC3.png" /></td></tr></table>
+
+<ul>
+  <li><span style="color: #000000">في [6]، قم بتعيين اسم مستعار (أي اسم) لتطبيق الويب الذي سيتم تنفيذه</span>
+  </li>
+  <li><span style="color: #000000">في [7]، حدد جذر تطبيق الويب الذي سيستخدم هذا الاسم المستعار: وهو المجلد [<bdi dir="ltr" class="odt-ltr-term">bin-debug</bdi>] لمشروع <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> الذي أنشأناه للتو.</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">دعونا نستعرض بنية مجلد [<bdi dir="ltr" class="odt-ltr-term">bin-debug</bdi>] في مشروع <bdi dir="ltr" class="odt-ltr-term">Flex:</bdi></span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002A20000016A72845621.png" width="337" height="181" style="display:inline-block; margin:4px;width:8.916cm;height:4.789cm;" class="odt-zoomable" data-zoom-src="images/10000000000002A20000016A72845621.png" /></td></tr></table>
+
+<p><span style="color: #000000">ملف [<bdi dir="ltr" class="odt-ltr-term">rdvmedecins01.html</bdi>] هو ملف <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> لتطبيق <bdi dir="ltr" class="odt-ltr-term">Flex.</bdi> بفضل الاسم المستعار الذي أنشأناه للتو لمجلد [<bdi dir="ltr" class="odt-ltr-term">bin-debug</bdi>]، يمكن الوصول إلى هذا الملف عبر عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost/rdvmedecins/rdvmedecins01.html</bdi>]. نصل إلى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> هذا في متصفح مزود بمكوّن <bdi dir="ltr" class="odt-ltr-term">Flash Player</bdi> الإضافي الإصدار 9 أو أعلى:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E9000001D9BE7DF49B.png" width="629" height="237" style="display:inline-block; margin:4px;width:16.63cm;height:6.258cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E9000001D9BE7DF49B.png" /></td></tr></table>
+
+<ul>
+  <li><span style="color: #000000">في [1]، عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> لتطبيق <bdi dir="ltr" class="odt-ltr-term">Flex</bdi></span>
+  </li>
+  <li><span style="color: #000000">في [2]، نطلب قائمة العملاء</span>
+  </li>
+  <li><span style="color: #000000">في [3]، النتيجة التي تم الحصول عليها عندما يعمل كل شيء بشكل صحيح</span>
+  </li>
+  <li><span style="color: #000000">في [4]، النتيجة التي تم الحصول عليها عند طلب قائمة العملاء على الرغم من توقف خدمة الويب.</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">قد تكون مهتمًا بمشاهدة شفرة المصدر لصفحة <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> المستلمة </span></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span>
+<span class="normal"><a href="#__codelineno-0-26">26</a></span>
+<span class="normal"><a href="#__codelineno-0-27">27</a></span>
+<span class="normal"><a href="#__codelineno-0-28">28</a></span>
+<span class="normal"><a href="#__codelineno-0-29">29</a></span>
+<span class="normal"><a href="#__codelineno-0-30">30</a></span>
+<span class="normal"><a href="#__codelineno-0-31">31</a></span>
+<span class="normal"><a href="#__codelineno-0-32">32</a></span>
+<span class="normal"><a href="#__codelineno-0-33">33</a></span>
+<span class="normal"><a href="#__codelineno-0-34">34</a></span>
+<span class="normal"><a href="#__codelineno-0-35">35</a></span>
+<span class="normal"><a href="#__codelineno-0-36">36</a></span>
+<span class="normal"><a href="#__codelineno-0-37">37</a></span>
+<span class="normal"><a href="#__codelineno-0-38">38</a></span>
+<span class="normal"><a href="#__codelineno-0-39">39</a></span>
+<span class="normal"><a href="#__codelineno-0-40">40</a></span>
+<span class="normal"><a href="#__codelineno-0-41">41</a></span>
+<span class="normal"><a href="#__codelineno-0-42">42</a></span>
+<span class="normal"><a href="#__codelineno-0-43">43</a></span>
+<span class="normal"><a href="#__codelineno-0-44">44</a></span>
+<span class="normal"><a href="#__codelineno-0-45">45</a></span>
+<span class="normal"><a href="#__codelineno-0-46">46</a></span>
+<span class="normal"><a href="#__codelineno-0-47">47</a></span>
+<span class="normal"><a href="#__codelineno-0-48">48</a></span>
+<span class="normal"><a href="#__codelineno-0-49">49</a></span>
+<span class="normal"><a href="#__codelineno-0-50">50</a></span>
+<span class="normal"><a href="#__codelineno-0-51">51</a></span>
+<span class="normal"><a href="#__codelineno-0-52">52</a></span>
+<span class="normal"><a href="#__codelineno-0-53">53</a></span>
+<span class="normal"><a href="#__codelineno-0-54">54</a></span>
+<span class="normal"><a href="#__codelineno-0-55">55</a></span>
+<span class="normal"><a href="#__codelineno-0-56">56</a></span>
+<span class="normal"><a href="#__codelineno-0-57">57</a></span>
+<span class="normal"><a href="#__codelineno-0-58">58</a></span>
+<span class="normal"><a href="#__codelineno-0-59">59</a></span>
+<span class="normal"><a href="#__codelineno-0-60">60</a></span>
+<span class="normal"><a href="#__codelineno-0-61">61</a></span>
+<span class="normal"><a href="#__codelineno-0-62">62</a></span>
+<span class="normal"><a href="#__codelineno-0-63">63</a></span>
+<span class="normal"><a href="#__codelineno-0-64">64</a></span>
+<span class="normal"><a href="#__codelineno-0-65">65</a></span>
+<span class="normal"><a href="#__codelineno-0-66">66</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="o">&lt;!--</span><span class="w"> </span><span class="n">saved</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">url</span><span class="o">=</span><span class="p">(</span><span class="mi">0014</span><span class="p">)</span><span class="n">about</span><span class="p">:</span><span class="n">internet</span><span class="w"> </span><span class="o">--&gt;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="o">&lt;</span><span class="n">html</span><span class="w"> </span><span class="n">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="o">&gt;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="o">&lt;!--</span><span class="w"> </span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="n">Smart</span><span class="w"> </span><span class="n">developers</span><span class="w"> </span><span class="n">always</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="n">Source</span><span class="p">.</span><span class="w"> </span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="n">This</span><span class="w"> </span><span class="n">application</span><span class="w"> </span><span class="n">was</span><span class="w"> </span><span class="n">built</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="nn">Adobe</span><span class="w"> </span><span class="n">Flex</span><span class="p">,</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">open</span><span class="w"> </span><span class="n">source</span><span class="w"> </span><span class="n">framework</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="k">for</span><span class="w"> </span><span class="n">building</span><span class="w"> </span><span class="n">rich</span><span class="w"> </span><span class="n">Internet</span><span class="w"> </span><span class="n">applications</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="k">get</span><span class="w"> </span><span class="n">delivered</span><span class="w"> </span><span class="n">via</span><span class="w"> </span><span class="n">the</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="n">Flash</span><span class="w"> </span><span class="n">Player</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">desktops</span><span class="w"> </span><span class="n">via</span><span class="w"> </span><span class="n">Adobe</span><span class="w"> </span><span class="n">AIR</span><span class="p">.</span><span class="w"> </span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="n">Learn</span><span class="w"> </span><span class="n">more</span><span class="w"> </span><span class="n">about</span><span class="w"> </span><span class="n">Flex</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="n">http</span><span class="p">:</span><span class="c1">//flex.org </span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="c1">// --&gt;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="o">&lt;</span><span class="n">meta</span><span class="w"> </span><span class="n">http</span><span class="o">-</span><span class="n">equiv</span><span class="o">=</span><span class="s">&quot;Content-Type&quot;</span><span class="w"> </span><span class="n">content</span><span class="o">=</span><span class="s">&quot;text/html; charset=utf-8&quot;</span><span class="w"> </span><span class="o">/&gt;</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="o">&lt;!--</span><span class="w">  </span><span class="n">BEGIN</span><span class="w"> </span><span class="n">Browser</span><span class="w"> </span><span class="n">History</span><span class="w"> </span><span class="n">required</span><span class="w"> </span><span class="n">section</span><span class="w"> </span><span class="o">--&gt;</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="o">&lt;</span><span class="n">link</span><span class="w"> </span><span class="n">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span><span class="w"> </span><span class="n">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="w"> </span><span class="n">href</span><span class="o">=</span><span class="s">&quot;history/history.css&quot;</span><span class="w"> </span><span class="o">/&gt;</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="o">&lt;!--</span><span class="w">  </span><span class="n">END</span><span class="w"> </span><span class="n">Browser</span><span class="w"> </span><span class="n">History</span><span class="w"> </span><span class="n">required</span><span class="w"> </span><span class="n">section</span><span class="w"> </span><span class="o">--&gt;</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="o">&lt;</span><span class="n">script</span><span class="w"> </span><span class="n">src</span><span class="o">=</span><span class="s">&quot;AC_OETags.js&quot;</span><span class="w"> </span><span class="n">language</span><span class="o">=</span><span class="s">&quot;javascript&quot;</span><span class="o">&gt;&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="p">...</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="o">&lt;</span><span class="n">script</span><span class="w"> </span><span class="n">language</span><span class="o">=</span><span class="s">&quot;JavaScript&quot;</span><span class="w"> </span><span class="n">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="o">&gt;</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="o">&lt;!--</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="c1">// -----------------------------------------------------------------------------</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="c1">// Globals</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="c1">// Major version of Flash required</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="kt">var</span><span class="w"> </span><span class="n">requiredMajorVersion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="c1">// Minor version of Flash required</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="kt">var</span><span class="w"> </span><span class="n">requiredMinorVersion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="c1">// Minor version of Flash required</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="kt">var</span><span class="w"> </span><span class="n">requiredRevision</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">124</span><span class="p">;</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="c1">// -----------------------------------------------------------------------------</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="c1">// --&gt;</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38"></a>
+<a id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="o">&lt;</span><span class="n">body</span><span class="w"> </span><span class="n">scroll</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="o">&gt;</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="o">&lt;</span><span class="n">script</span><span class="w"> </span><span class="n">language</span><span class="o">=</span><span class="s">&quot;JavaScript&quot;</span><span class="w"> </span><span class="n">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="o">&gt;</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41"></a><span class="o">&lt;!--</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="c1">// Version check for the Flash Player that has the ability to start Player Product Install (6.0r65)</span>
+<a id="__codelineno-0-43" name="__codelineno-0-43"></a><span class="p">....</span>
+<a id="__codelineno-0-44" name="__codelineno-0-44"></a><span class="c1">// --&gt;</span>
+<a id="__codelineno-0-45" name="__codelineno-0-45"></a><span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+<a id="__codelineno-0-46" name="__codelineno-0-46"></a><span class="o">&lt;</span><span class="n">noscript</span><span class="o">&gt;</span>
+<a id="__codelineno-0-47" name="__codelineno-0-47"></a><span class="w">        </span><span class="o">&lt;</span><span class="kt">object</span><span class="w"> </span><span class="n">classid</span><span class="o">=</span><span class="s">&quot;clsid:D27CDB6E-AE6D-11cf-96B8-444553540000&quot;</span>
+<a id="__codelineno-0-48" name="__codelineno-0-48"></a><span class="w">                        </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;rdvmedecins01&quot;</span><span class="w"> </span><span class="n">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span><span class="w"> </span><span class="n">height</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
+<a id="__codelineno-0-49" name="__codelineno-0-49"></a><span class="w">                        </span><span class="n">codebase</span><span class="o">=</span><span class="s">&quot;http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab&quot;</span><span class="o">&gt;</span>
+<a id="__codelineno-0-50" name="__codelineno-0-50"></a><span class="w">                        </span><span class="o">&lt;</span><span class="n">param</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s">&quot;movie&quot;</span><span class="w"> </span><span class="k">value</span><span class="o">=</span><span class="s">&quot;rdvmedecins01.swf&quot;</span><span class="w"> </span><span class="o">/&gt;</span>
+<a id="__codelineno-0-51" name="__codelineno-0-51"></a><span class="w">                        </span><span class="o">&lt;</span><span class="n">param</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s">&quot;quality&quot;</span><span class="w"> </span><span class="k">value</span><span class="o">=</span><span class="s">&quot;high&quot;</span><span class="w"> </span><span class="o">/&gt;</span>
+<a id="__codelineno-0-52" name="__codelineno-0-52"></a><span class="w">                        </span><span class="o">&lt;</span><span class="n">param</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s">&quot;bgcolor&quot;</span><span class="w"> </span><span class="k">value</span><span class="o">=</span><span class="s">&quot;#869ca7&quot;</span><span class="w"> </span><span class="o">/&gt;</span>
+<a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="w">                        </span><span class="o">&lt;</span><span class="n">param</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s">&quot;allowScriptAccess&quot;</span><span class="w"> </span><span class="k">value</span><span class="o">=</span><span class="s">&quot;sameDomain&quot;</span><span class="w"> </span><span class="o">/&gt;</span>
+<a id="__codelineno-0-54" name="__codelineno-0-54"></a><span class="w">                        </span><span class="o">&lt;</span><span class="n">embed</span><span class="w"> </span><span class="n">src</span><span class="o">=</span><span class="s">&quot;rdvmedecins01.swf&quot;</span><span class="w"> </span><span class="n">quality</span><span class="o">=</span><span class="s">&quot;high&quot;</span><span class="w"> </span><span class="n">bgcolor</span><span class="o">=</span><span class="s">&quot;#869ca7&quot;</span>
+<a id="__codelineno-0-55" name="__codelineno-0-55"></a><span class="w">                                </span><span class="n">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span><span class="w"> </span><span class="n">height</span><span class="o">=</span><span class="s">&quot;100%&quot;</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s">&quot;rdvmedecins01&quot;</span><span class="w"> </span><span class="n">align</span><span class="o">=</span><span class="s">&quot;middle&quot;</span>
+<a id="__codelineno-0-56" name="__codelineno-0-56"></a><span class="w">                                </span><span class="n">play</span><span class="o">=</span><span class="s">&quot;true&quot;</span>
+<a id="__codelineno-0-57" name="__codelineno-0-57"></a><span class="w">                                </span><span class="n">loop</span><span class="o">=</span><span class="s">&quot;false&quot;</span>
+<a id="__codelineno-0-58" name="__codelineno-0-58"></a><span class="w">                                </span><span class="n">quality</span><span class="o">=</span><span class="s">&quot;high&quot;</span>
+<a id="__codelineno-0-59" name="__codelineno-0-59"></a><span class="w">                                </span><span class="n">allowScriptAccess</span><span class="o">=</span><span class="s">&quot;sameDomain&quot;</span>
+<a id="__codelineno-0-60" name="__codelineno-0-60"></a><span class="w">                                </span><span class="n">type</span><span class="o">=</span><span class="s">&quot;application/x-shockwave-flash&quot;</span>
+<a id="__codelineno-0-61" name="__codelineno-0-61"></a><span class="w">                                </span><span class="n">pluginspage</span><span class="o">=</span><span class="s">&quot;http://www.adobe.com/go/getflashplayer&quot;</span><span class="o">&gt;</span>
+<a id="__codelineno-0-62" name="__codelineno-0-62"></a><span class="w">                        </span><span class="o">&lt;/</span><span class="n">embed</span><span class="o">&gt;</span>
+<a id="__codelineno-0-63" name="__codelineno-0-63"></a><span class="w">        </span><span class="o">&lt;/</span><span class="kt">object</span><span class="o">&gt;</span>
+<a id="__codelineno-0-64" name="__codelineno-0-64"></a><span class="o">&lt;/</span><span class="n">noscript</span><span class="o">&gt;</span>
+<a id="__codelineno-0-65" name="__codelineno-0-65"></a><span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+<a id="__codelineno-0-66" name="__codelineno-0-66"></a><span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p><span style="color: #000000">يبدأ نص الصفحة في السطر 39. ولا يحتوي على <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> قياسي بل على كائن (السطر 47) من النوع &quot;<bdi dir="ltr" class="odt-ltr-term">application/x-shockwave-flash</bdi>&quot; (السطر 60). هذا هو الملف [<bdi dir="ltr" class="odt-ltr-term">rdvmedecins01.swf</bdi>] (السطر 54) الذي يمكن العثور عليه في مجلد [<bdi dir="ltr" class="odt-ltr-term">bin-debug</bdi>] لمشروع <bdi dir="ltr" class="odt-ltr-term">Flex.</bdi> وهو ملف كبير الحجم: حوالي 600 كيلوبايت لهذا المثال البسيط.</span></p>
+<h2 id="62-flex">6.2. <span style="color: #4f81bd">عميل <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> ثانٍ</span></h2>
+<p><span style="color: #000000">لن يستخدم عميل <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> الثاني الوكيل <bdi dir="ltr" class="odt-ltr-term">C</bdi> الذي تم إنشاؤه للعميل الأول. نريد أن نوضح أن هذه الخطوة ليست ضرورية، على الرغم من أنها تقدم مزايا مقارنة بالنهج الذي سنقدمه هنا.</span></p>
+<p><span style="color: #000000">يتطور المشروع على النحو التالي:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004A800000215A95C6F33.png" width="596" height="266" style="display:inline-block; margin:4px;width:15.769cm;height:7.05cm;" class="odt-zoomable" data-zoom-src="images/10000000000004A800000215A95C6F33.png" /></td></tr></table>
+
+<ul>
+  <li><span style="color: #000000">في [1] تطبيق <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> الجديد</span>
+  </li>
+  <li><span style="color: #000000">في [2] الملفات التنفيذية المرتبطة</span>
+  </li>
+  <li><span style="color: #000000">في [3] العرض الجديد: سنعرض قائمة الأطباء.</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">فيما يلي كود <bdi dir="ltr" class="odt-ltr-term">MXML</bdi> الخاص بالتطبيق [<bdi dir="ltr" class="odt-ltr-term">rdvmedecins02.mxml</bdi>]:</span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;mx:Application</span><span style="color:#000000"> xmlns:mx=&quot;</span><span style="color:#990000">http://www.adobe.com/2006/mxml</span><span style="color:#000000">&quot; layout=&quot;</span><span style="color:#990000">vertical</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#006633">&lt;mx:Script&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        &lt;![CDATA[</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.rpc.events.ResultEvent;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.rpc.events.FaultEvent;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.collections.ArrayCollection;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// données</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            [</span><span style="font-weight:bold;color:#0033ff">Bindable</span><span style="color:#000000">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> medecins:ArrayCollection;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> loadMedecins():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// on demande la liste des médecins</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                wsrdvmedecins.getAllMedecins.send();</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> loadMedecinsCompleted(event:ResultEvent):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// on récupère les médecins</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                medecins=event.result </span><span style="font-weight:bold;color:#0033ff">as</span><span style="color:#000000"> ArrayCollection;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> loadMedecinsFault(event:FaultEvent):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// on affiche le msg d&#x27;erreur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                txtMsgErreur.text=event.fault.message;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            } </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// affichage d&#x27;un médecin</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> displayMedecin(medecin:Object):String{</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="font-weight:bold;color:#0033ff">return</span><span style="color:#000000"> medecin.nom + </span><span style="font-weight:bold;color:#990000">&quot; &quot;</span><span style="color:#000000"> + medecin.prenom;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            } </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        ]]&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#006633">&lt;/mx:Script&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;mx:WebService</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">wsrdvmedecins</span><span style="color:#000000">&quot; </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        wsdl=&quot;</span><span style="color:#990000">http://localhost:8080/serveur-webservice-ejb-dao-jpa-hibernate/WsDaoJpaService?wsdl</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:operation</span><span style="color:#000000"> name=&quot;</span><span style="color:#990000">getAllMedecins</span><span style="color:#000000">&quot; </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            result=&quot;loadMedecinsCompleted(event)&quot; fault=&quot;loadMedecinsFault(event);&quot;</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:request/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;/mx:operation&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;/mx:WebService&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;mx:Label</span><span style="color:#000000"> text=&quot;</span><span style="color:#990000">Liste des médecins</span><span style="color:#000000">&quot; fontSize=&quot;</span><span style="color:#990000">14</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;mx:List</span><span style="color:#000000"> dataProvider=&quot;</span><span style="color:#990000">{</span><span style="color:#000000">medecins</span><span style="color:#990000">}</span><span style="color:#000000">&quot; labelFunction=&quot;</span><span style="color:#990000">displayMedecin</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;&lt;/mx:List&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;mx:Button</span><span style="color:#000000"> label=&quot;</span><span style="color:#990000">Afficher les médecins</span><span style="color:#000000">&quot; click=&quot;loadMedecins()&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;mx:Text</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">txtMsgErreur</span><span style="color:#000000">&quot; width=&quot;</span><span style="color:#990000">300</span><span style="color:#000000">&quot; height=&quot;</span><span style="color:#990000">113</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;/mx:Application&gt;</span></span>
+</code></pre></div>
+
+<p><span style="color: #000000">سنعلق فقط على الميزات الجديدة:</span></p>
+<ul>
+  <li><span style="color: #000000">الأسطر 42–45: العرض الجديد. وهو مطابق للعرض السابق باستثناء أنه تم تكييفه لعرض الأطباء بدلاً من العملاء.</span>
+  </li>
+  <li><span style="color: #000000">الأسطر 35–41: يتم وصف خدمة الويب هنا بواسطة علامة &lt;</span><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">mx:WebService</bdi></span></b><span style="color: #000000">&gt; (السطر 35). لم يعد الوكيل <bdi dir="ltr" class="odt-ltr-term">C</bdi> المستخدم في الإصدار السابق مستخدمًا هنا.</span>
+  </li>
+  <li><span style="color: #000000">السطر 35: تعطي سمة </span><i><span style="color: #000000">id </span></i><span style="color: #000000">اسمًا لخدمة الويب.</span>
+  </li>
+  <li><span style="color: #000000">السطر 36: تحدد السمة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">wsdl</bdi> </span></i><span style="color: #000000">عنوان <bdi dir="ltr" class="odt-ltr-term">URI</bdi> لملف <bdi dir="ltr" class="odt-ltr-term">WSDL</bdi> الخاص بخدمة الويب. وهو نفس عنوان <bdi dir="ltr" class="odt-ltr-term">URI</bdi> الذي استخدمه العميل السابق والمحدد في القسم</span><a href="#uri-service-web"><u><span style="color: #0563c1"> 4.10.2</span></u></a><span style="color: #000000">.</span>
+  </li>
+  <li><span style="color: #000000">الأسطر 37-40: تحدد طريقة لخدمة الويب البعيدة باستخدام علامة &lt;</span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">mx:operation</bdi></span></i><span style="color: #000000">&gt;</span>
+  </li>
+  <li><span style="color: #000000">السطر 37: يتم تعريف الطريقة المشار إليها بواسطة السمة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">name</bdi></span></i><span style="color: #000000">. هنا نشير إلى الطريقة البعيدة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">getAllMedecins</bdi></span></i><span style="color: #000000">.</span>
+  </li>
+  <li><span style="color: #000000">السطر 38: نحدد الطرق التي سيتم تنفيذها في حالة نجاح العملية (سمة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">result</bdi></span></i><span style="color: #000000">) وفي حالة فشلها (سمة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">fault</bdi></span></i><span style="color: #000000">).</span>
+  </li>
+  <li><span style="color: #000000">السطر 39: تُستخدم علامة &lt;</span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">mx:request</bdi></span></i><span style="color: #000000">&gt; لتعريف معلمات العملية. هنا، لا تحتوي الطريقة البعيدة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">getAllMedecins</bdi> </span></i><span style="color: #000000">على معلمات، لذا نتركها فارغة. بالنسبة لطريقة تقبل المعلمات </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">param1</bdi> </span></i><span style="color: #000000">و <bdi dir="ltr" class="odt-ltr-term">param2</bdi>، سنكتب:</span>
+  </li>
+</ul>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&lt;mx:Request&gt;
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    &lt;param1&gt;{param1}&lt;/param1&gt;
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    &lt;param1&gt;{param1}&lt;/param1&gt;
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>&lt;/mx:Request&gt;
+</code></pre></div>
+<p><span style="color: #000000">حيث </span><em><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">param1</bdi> </span></em><span style="color: #000000">و </span><em><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">param2</bdi> </span></em><span style="color: #000000">هما متغيران تم إعلانهما وتهيئتهما داخل علامة &lt;<bdi dir="ltr" class="odt-ltr-term">mx:Script</bdi>&gt;</span></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">[</span><span class="nx">Bindable</span><span class="p">]</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kr">private</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nx">param1</span><span class="o">:</span><span class="nx">Type1</span><span class="p">;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">[</span><span class="nx">Bindable</span><span class="p">]</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="kr">private</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nx">param2</span><span class="o">:</span><span class="nx">Type2</span><span class="p">;</span>
+</code></pre></div>
+<p><span style="color: #000000">داخل علامة &lt;</span><em><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">mx:Script</bdi></span></em><span style="color: #000000">&gt;، يوجد كود <bdi dir="ltr" class="odt-ltr-term">ActionScript</bdi> مشابه لذلك الذي تمت دراسته في العميل السابق. والفرق الوحيد هو طريقة </span><em><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">loadMedecins</bdi> </span></em><span style="color: #000000">في الأسطر 13–16. والفرق يكمن في طريقة استدعاء الطريقة البعيدة [<bdi dir="ltr" class="odt-ltr-term">getAllMedecins</bdi>]:</span></p>
+<ul>
+  <li><span style="color: #000000">السطر 15: نستخدم خدمة الويب [<bdi dir="ltr" class="odt-ltr-term">wsrdvmedecins</bdi>] المحددة في السطر 35 وعملية [<bdi dir="ltr" class="odt-ltr-term">getAllMedecins</bdi>] المحددة في السطر 37. لتنفيذ هذه العملية، يتم استخدام طريقة </span><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">send</bdi></span></b><span style="color: #000000">. وهي تبدأ الاستدعاء غير المتزامن لطريقة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">getAllMedecins</bdi> </span></i><span style="color: #000000">لخدمة الويب المحددة في السطر 35. ستقوم طريقة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">send</bdi> </span></i><span style="color: #000000">بإجراء الاستدعاء باستخدام المعلمات المحددة بواسطة العلامة &lt;</span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">mx:request</bdi></span></i><span style="color: #000000">&gt; في السطر 39. هنا، لا توجد معلمات. إذا كانت الطريقة تحتوي على المعلمتين </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">param1</bdi> </span></i><span style="color: #000000">و <bdi dir="ltr" class="odt-ltr-term">param2</bdi>، لكان البرنامج النصي </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">loadMedecins</bdi> </span></i><span style="color: #000000">قد عيّن قيمًا لهذه المعلمات قبل استدعاء طريقة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">send</bdi></span></i><span style="color: #000000">.</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">كل ما تبقى هو اختبار هذا التطبيق الجديد:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001090000014E854DFB8E.png" width="186" height="234" style="display:inline-block; margin:4px;width:4.911cm;height:6.189cm;" class="odt-zoomable" data-zoom-src="images/10000000000001090000014E854DFB8E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        هذا البرنامج التعليمي الذي كتبه <strong>Serge Tahé</strong> متاح للجمهور وفقًا لشروط
+<em>Creative Commons Attribution – Non-Commercial –
+ShareAlike 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
