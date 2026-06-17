@@ -12,13 +12,13 @@
         <meta name="author" content="Serge Tahé">
       
       
-        <link rel="canonical" href="https://stahe.github.io/ar-webservice-netbeans-glassfish-fev-2009/by-khdm-lwyb-lty-tm-twyrh.html">
+        <link rel="canonical" href="https://stahe.github.io/ar-webservice-netbeans-glassfish-fev-2009/ryq-ml-ltbyq.html">
       
       
-        <link rel="prev" href="mqdm.html">
+        <link rel="prev" href="by-khdm-lwyb-lty-tm-nshwh.html">
       
       
-        <link rel="next" href="kyfy-ml-ltbyq.html">
+        <link rel="next" href="khdm-lwyb-j2ee-lkh-blmwyd.html">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>2. طبيعة خدمة الويب التي تم تطويرها - إنشاء خدمة ويب Java EE باستخدام بيئة التطوير المتكاملة NetBeans 6.5 وخادم Java EE GlassFish</title>
+        <title>3. طريقة عمل التطبيق - إنشاء خدمة ويب Java EE باستخدام بيئة التطوير المتكاملة NetBeans 6.5 وخادم Java EE GlassFish</title>
       
     
     
@@ -94,7 +94,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#2" class="md-skip">
+        <a href="#3" class="md-skip">
           Skip to content
         </a>
       
@@ -130,7 +130,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2. طبيعة خدمة الويب التي تم تطويرها
+              3. طريقة عمل التطبيق
             
           </span>
         </div>
@@ -329,6 +329,33 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="by-khdm-lwyb-lty-tm-nshwh.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. طبيعة خدمة الويب التي تم إنشاؤها
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -341,14 +368,14 @@
         
       
       
-      <a href="by-khdm-lwyb-lty-tm-twyrh.html" class="md-nav__link md-nav__link--active">
+      <a href="ryq-ml-ltbyq.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    2. طبيعة خدمة الويب التي تم تطويرها
+    3. طريقة عمل التطبيق
   
 
     
@@ -369,14 +396,14 @@
   
   
     <li class="md-nav__item">
-      <a href="kyfy-ml-ltbyq.html" class="md-nav__link">
+      <a href="khdm-lwyb-j2ee-lkh-blmwyd.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    3. كيفية عمل التطبيق
+    4. خدمة الويب J2EE الخاصة بالمواعيد
   
 
     
@@ -396,41 +423,14 @@
   
   
     <li class="md-nav__item">
-      <a href="khdm-lwyb-j2ee-ldr-lmwyd.html" class="md-nav__link">
+      <a href="ml-net-lkhdm-j2ee-lkh-blmwyd.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    4. خدمة الويب J2EE لإدارة المواعيد
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="ml-net-lkhdm-lmwyd-j2ee.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    5. عملاء .NET لخدمة المواعيد J2EE
+    5. عملاء .NET لخدمة J2EE الخاصة بالمواعيد
   
 
     
@@ -514,25 +514,24 @@
 
 
 
-<h1 id="2">2. <span style="color: #365f91">طبيعة خدمة الويب التي تم تطويرها</span></h1>
-<p>ترغب شركة خدمات تكنولوجيا المعلومات [<bdi dir="ltr" class="odt-ltr-term">ISTIA-IAIE</bdi>] في تقديم خدمة حجز المواعيد. السوق المستهدف الرئيسي هو الأطباء الذين يمارسون المهنة بمفردهم. لا يمتلك هؤلاء الأطباء عمومًا موظفين إداريين. لذلك، يتصل العملاء الراغبون في حجز موعد بالطبيب مباشرةً. يؤدي هذا في كثير من الأحيان إلى تعطيل عمل الطبيب طوال اليوم، مما يقلل من توفره للمرضى. ترغب شركة [<bdi dir="ltr" class="odt-ltr-term">ISTIA-IAIE</bdi>] في تقديم خدمة حجز المواعيد لهم تعمل وفقًا للمبدأ التالي:</p>
-<ul>
-<li>يقوم موظف استقبال بإدارة حجز المواعيد لعدد كبير من الأطباء. يمكن أن يكون هذا الموظف شخصًا واحدًا فقط. ويتم تقاسم راتبه بين جميع الأطباء الذين يستخدمون خدمة حجز المواعيد.</li>
-<li>يكون المكتب الإداري وجميع الأطباء متصلين بالإنترنت</li>
-<li>يتم تسجيل المواعيد في قاعدة بيانات مركزية، يمكن للمكتب الإداري والأطباء الوصول إليها عبر الإنترنت</li>
-<li>عادةً ما يتم تحديد المواعيد من قبل المكتب الإداري. كما يمكن للأطباء أنفسهم تحديد المواعيد. ويحدث هذا بشكل خاص عندما يقوم الطبيب، في نهاية الاستشارة، بتحديد موعد جديد للمريض.</li>
-</ul>
-<p>وتتمثل بنية خدمة تحديد المواعيد فيما يلي:</p>
-<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/1000000000000696000001ED08A3ADA8.png" width="680" height="199" style="display:inline-block; margin:4px;width:17.997cm;height:5.262cm;" class="odt-zoomable" data-zoom-src="images/1000000000000696000001ED08A3ADA8.png" /></td></tr></table>
+<p><span id="vuesappliweb" name="vuesappliweb" class="odt-bookmark-anchor"></span></p>
+<h1 id="3">3. <span style="color: #365f91">طريقة عمل التطبيق</span></h1>
+<p>سنطلق على التطبيق اسم [<bdi dir="ltr" class="odt-ltr-term">RdvMedecins</bdi>]. نعرض أدناه لقطات شاشة توضح كيفية عمله مع عميل ويب. لا يتم عرض هذا العميل في هذا الدرس التعليمي. يمكن العثور عليه في المستند [<bdi dir="ltr" class="odt-ltr-term">http://tahe.developpez.com/dotnet/exercices/</bdi>]، التمرين رقم 4.</p>
+<p>الصفحة الرئيسية للتطبيق هي كما يلي:</p>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000001FD000000CACEA1FF79.png" width="358" height="141" style="display:inline-block; margin:4px;width:9.46cm;height:3.739cm;" class="odt-zoomable" data-zoom-src="images/10000000000001FD000000CACEA1FF79.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td></tr></table>
 
-<p>يصبح الأطباء أكثر كفاءة إذا لم يعودوا مضطرين إلى إدارة المواعيد. وإذا كان عددهم كافياً، فستكون مساهمتهم في تكاليف تشغيل المكتب الإداري ضئيلة.</p>
-<p>قررت الشركة [<bdi dir="ltr" class="odt-ltr-term">ISTIA-IAIE</bdi>] تنفيذ المكون الخاص بخادم الويب كخدمة ويب. وستتخذ التطبيق البنية التالية:</p>
-<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/1000000000000880000001F9E0EAE346.png" width="680" height="158" style="display:inline-block; margin:4px;width:17.997cm;height:4.177cm;" class="odt-zoomable" data-zoom-src="images/1000000000000880000001F9E0EAE346.png" /></td></tr></table>
+<p>من هذه الصفحة الأولى، سيقوم المستخدم (المسؤول الإداري، الطبيب) بتنفيذ عدد من الإجراءات. نعرضها أدناه. تعرض الصورة على اليسار الشاشة التي يقوم المستخدم من خلالها <strong>بتقديم</strong> طلب، بينما تعرض الصورة على اليمين <strong>الرد</strong> المرسل من الخادم.</p>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000085C000004954AEF4D06.png" width="680" height="373" style="display:inline-block; margin:4px;width:17.997cm;height:9.864cm;" class="odt-zoomable" data-zoom-src="images/100000000000085C000004954AEF4D06.png" /></td></tr></table>
 
-<ul>
-<li>[1]: يتم تنفيذ طبقات [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>، <bdi dir="ltr" class="odt-ltr-term">JPA</bdi>] التي تتيح الوصول إلى البيانات باستخدام خدمة ويب <bdi dir="ltr" class="odt-ltr-term">J2EE</bdi></li>
-<li>[2]: سنقدم أنواعًا مختلفة من العملاء: <bdi dir="ltr" class="odt-ltr-term">Java</bdi>، <bdi dir="ltr" class="odt-ltr-term">C#</bdi>، <bdi dir="ltr" class="odt-ltr-term">Asp.Net</bdi></li>
-</ul>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000085200000265CA2B493B.png" width="680" height="196" style="display:inline-block; margin:4px;width:17.997cm;height:5.179cm;" class="odt-zoomable" data-zoom-src="images/100000000000085200000265CA2B493B.png" /></td></tr></table>
+
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000028900000180E18D1C0B.png" width="325" height="192" style="display:inline-block; margin:4px;width:8.587cm;height:5.08cm;" class="odt-zoomable" data-zoom-src="images/100000000000028900000180E18D1C0B.png" /></td></tr></table>
+
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000008510000029A747BE971.png" width="680" height="213" style="display:inline-block; margin:4px;width:17.997cm;height:5.629cm;" class="odt-zoomable" data-zoom-src="images/10000000000008510000029A747BE971.png" /></td></tr></table>
+
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/1000000000000858000002E77CA81E98.png" width="680" height="237" style="display:inline-block; margin:4px;width:17.997cm;height:6.26cm;" class="odt-zoomable" data-zoom-src="images/1000000000000858000002E77CA81E98.png" /></td></tr></table>
+
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000085C0000029BED9840AC.png" width="680" height="212" style="display:inline-block; margin:4px;width:17.997cm;height:5.609cm;" class="odt-zoomable" data-zoom-src="images/100000000000085C0000029BED9840AC.png" /></td></tr></table>
 
 
 
